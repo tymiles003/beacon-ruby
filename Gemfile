@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+group :development do 
+	gem 'pry-rails'
+end
+
 group :test do 
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001012451) do
+ActiveRecord::Schema.define(version: 20141009011819) do
+
+  create_table "invisible_areas", force: true do |t|
+    t.string  "name"
+    t.string  "location"
+    t.integer "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
