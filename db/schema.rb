@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009011819) do
+ActiveRecord::Schema.define(version: 20141012010638) do
 
   create_table "invisible_areas", force: true do |t|
     t.string  "name"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20141009011819) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "instagram_url"
+    t.string   "linkedin_url"
+    t.string   "tumblr_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

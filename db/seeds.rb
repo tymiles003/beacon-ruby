@@ -9,7 +9,7 @@ json = {
 }
 
 json[:users].each do |dict|
-	dict["password"] = dict["password_confirmation"] = "Test Password"
+	dict["password"] = dict["password_confirmation"] = "password"
 	user = User.create!(dict)
 	puts "successfully created new user: #{user.email}"
 end
