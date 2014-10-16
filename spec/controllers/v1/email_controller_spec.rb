@@ -6,7 +6,11 @@ describe V1::EmailsController do
 	context '#new' do
 		it "responds successfully" do
 			get :new, email: user.email, format: :json
-			expect(response).to have_http_status(200)
+			expect(response).to have_http_status 200
+		end
+		it "fails successfully" do 
+			get :new, email: "random@email.com", format: :json
+			expect(response).to have_http_status 403
 		end
 	end
 

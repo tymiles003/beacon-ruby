@@ -18,7 +18,7 @@ class V1::SessionsController < Devise::SessionsController
     raise ActiveRecord::RecordNotFound if @user.nil?
 
     if !@user.valid_password?(password)
-      render status: 401,
+      render status: 403,
       json: {
         error: I18n.t("devise.failure.not_found_in_database")
       } and return

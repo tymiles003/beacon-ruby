@@ -2917,3 +2917,665 @@ Processing by V1::UsersController#social as JSON
 Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
   [1m[35m (0.4ms)[0m  rollback transaction
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.538560"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$H6MQ3ukU2lc3JrkcXRD2B.XyvGdzUaCRWWNvL0BcGbML0SAnkd6iO"], ["updated_at", "2014-10-16 07:54:51.538560"], ["url", "http://google.com"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:54:51.560206"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered v1/users/social.json.jbuilder (0.3ms)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.575271"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$GoqNe2iF8v1MeGr1wtU5A.qtBbNLDDVRzzG1k6Uhtrr4Clb69maLK"], ["updated_at", "2014-10-16 07:54:51.575271"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:54:51.577812"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.582440"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$J4x88t/Qa1qYt0IJa9N6T.o/Gh0BjnWMiAaZdyMuxjaMMxiqw.BIy"], ["updated_at", "2014-10-16 07:54:51.582440"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:54:51.584608"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.589286"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$3HUW5lnTbP6kp9nf6jwOU.e.Rj/b.L7ipTy9UUqr9W4b9ofoQ5g5y"], ["updated_at", "2014-10-16 07:54:51.589286"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:54:51.591527"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.596082"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$rlKNsuGUf7jsJwsVUm0douJK1Gg1IZDY6YgFsQkXzsQEV2FFaq5Sy"], ["updated_at", "2014-10-16 07:54:51.596082"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.601764"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$i5W76p2DXV6NTP4rufm4a.YTOZzhgKcW7frwnqJAM2wBonw7gHkpC"], ["updated_at", "2014-10-16 07:54:51.601764"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:54:51.604676"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.611938"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$LT1XVB./JqmFI5ofcucm1uz7dYqqZzc/1sVoAWGixa7O2nZ/aIM7G"], ["updated_at", "2014-10-16 07:54:51.611938"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 4ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:54:51.628073"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$MOstXcl4Ubbc8NZ0loG6KuXlnry5IBvwbIR1ew2r.f0fKuhtNghVi"], ["updated_at", "2014-10-16 07:54:51.628073"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email8@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:55:24.012546"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$0oAgE/Nx3xtbSmjLqyuTB.JizUnO6WoPK/lP/HmTLjoqm41JQ36LW"], ["updated_at", "2014-10-16 07:55:24.012546"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email1@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.032018"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$x0m0f1xNTbCTlk0360ePt.832oCWitRBZuo6DQjwbU3agdGn6bkUG"], ["updated_at", "2014-10-16 07:55:24.032018"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.040619"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$.go6Xjr8Nbea81k0C6Iqt.cFinBRs/03Q6DZmvjW6r1NPFbgFD10O"], ["updated_at", "2014-10-16 07:55:24.040619"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.044605"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$W/QDzV/E4gmPHz83aTZBvO25TvYCL9ROPRVslwBk7Z5OdUIKWyukW"], ["updated_at", "2014-10-16 07:55:24.044605"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:55:24.046969"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.052970"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$bE0.4g2uWBUmQVYoLLGK5uRFGkMm.gCzI8vCHmVsZP5LDhaYLbuCG"], ["updated_at", "2014-10-16 07:55:24.052970"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:55:24.055324"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.060906"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$iq5u2dNeR.ReyucIrLNv3OrCwQrPh12r1V4oFlMagZtIFIhyJY6XO"], ["updated_at", "2014-10-16 07:55:24.060906"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:55:24.063572"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.069866"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$a3KnE/HzUlVl6ro6emMoY.J7AIm52aAEAEGVHKq83kP9h18J6tbla"], ["updated_at", "2014-10-16 07:55:24.069866"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:55:24.072825"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:55:24.079349"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$fMWL3.F0hiyqJhXNUwBVUuhJGzylQUXaxviHJ6gT02IX9zpb.c8U."], ["updated_at", "2014-10-16 07:55:24.079349"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:55:24.082185"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:56:04.207260"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$ZfsHhpOzNY/M4t9A5ZQYO.V/gyY27djremW.wLaQlraZt6fw88BQS"], ["updated_at", "2014-10-16 07:56:04.207260"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email1@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.229766"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$Kw1Wbp1T4H/7BxrzLsqQre1UXWre7hbPDbpREJrjX.RA3YRXsXvRS"], ["updated_at", "2014-10-16 07:56:04.229766"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.237273"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$OrE5OAG/Y9oqfUdnTVqntOPttkEgLzhw/4pZDAaDnR0kIIUJIM5jm"], ["updated_at", "2014-10-16 07:56:04.237273"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:56:04.239386"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.245544"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$BD0OOZLEro4lFexOLa/A9O3YZkdQUd21nM10k0Q.XeVMgcbNUXFbu"], ["updated_at", "2014-10-16 07:56:04.245544"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:56:04.247790"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.252140"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$gbEEDGbscjg/M3azPrAhmuDONuELzirVrmfST4uSmuzgTKnvo9oTK"], ["updated_at", "2014-10-16 07:56:04.252140"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:56:04.254372"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.258696"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$MtVoVgjuE7YkwlRGIq.cvOTG3bmOlXW4fopfNGIoqVFfelP0kuzva"], ["updated_at", "2014-10-16 07:56:04.258696"], ["url", "http://google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:56:04.261664"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.266671"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$CXDMaD7hCkYzNc0/Va3qWO0.vPCuypzpaH6Gm4cg15QugMoO1KoT2"], ["updated_at", "2014-10-16 07:56:04.266671"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:56:04.269002"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:04.275368"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$r2EkG3YmVMOkDIS96YL1tOh3Smox21IlziZGImX9TD4gjQ9dj5xmK"], ["updated_at", "2014-10-16 07:56:04.275368"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:56:59.302254"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$1rz6dywuy3w7PlV9S5yD2.4PuXkyHzy5xgOr0jK6KpPxKXbCCm8jK"], ["updated_at", "2014-10-16 07:56:59.302254"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email1@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.330009"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$jKRE5JtL0WxA1jWHgN8xx.53FRJfqX.963MfU66fZYtrzXNeXMk.6"], ["updated_at", "2014-10-16 07:56:59.330009"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.338480"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$pLoC.e5pHDc9K68n9Cd0/.JBHPFbyEWEi5VCvpQXUwwopc4ZdXw9e"], ["updated_at", "2014-10-16 07:56:59.338480"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:56:59.341358"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.349014"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$L5lT6Z4CWikv.7.HSB6SZO7C2jMdelrl91KVPMzSS5SGW3YZJDuye"], ["updated_at", "2014-10-16 07:56:59.349014"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:56:59.351769"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.356900"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$s3yAWDptx8tJ0vu7M/WvxuHKMegw8nXKQiWmCAZ4BDEsxqBw9s0cO"], ["updated_at", "2014-10-16 07:56:59.356900"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.362361"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$PtBA505AeWUApZgvaRyhYOdLIXP4CtFpbDQnN1f/RTeItX4iAbG8W"], ["updated_at", "2014-10-16 07:56:59.362361"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:56:59.365246"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.370069"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$PdTaVoJgEQqwMPl8YUp80O5AJiLk9NHgtXHdvzG/TTJIPCISFVKlW"], ["updated_at", "2014-10-16 07:56:59.370069"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:56:59.373451"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:56:59.378440"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$yA.QDz8tmS3jdxNA91dG4ur7Iaoh/YgiPHPX085.3YOGKFnJC2Txy"], ["updated_at", "2014-10-16 07:56:59.378440"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:56:59.380755"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:57:29.272994"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$q9uStcs/esIcytYfgViq9u9/5Ks1Zjkkxs7FhdT7nM6pMlyyToKDO"], ["updated_at", "2014-10-16 07:57:29.272994"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email1@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.300045"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$WRsSORRcucKfmV5wmj693OhN7h9dur6qXJZTvHtg4tDk.y8esMuce"], ["updated_at", "2014-10-16 07:57:29.300045"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.307682"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$GQQNXtHIrm04JtfFz8/5uOHwmanPbKjD6wwErfxkL2bTmDNN8NwC2"], ["updated_at", "2014-10-16 07:57:29.307682"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:57:29.309908"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.315644"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$HN1bWW2qIaU9pXG4paqG7u7uD4VRgLI1BPDwSIhRYAFfh.oG2ivvq"], ["updated_at", "2014-10-16 07:57:29.315644"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:57:29.317911"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.322097"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$3nqCJ40c7y8eJIOLpNbTn..WdQO2gGZJUeZ2h0mZkYs9r2TX1lJCG"], ["updated_at", "2014-10-16 07:57:29.322097"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.326062"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$DmIn40s27YQ5EX.JHaSvVOViX921MPmLCGEvotrFFa7aFpDNF.Tfu"], ["updated_at", "2014-10-16 07:57:29.326062"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:57:29.328310"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.334510"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$3xvmUihzofn3qfgKPxAUWeEZ6umYgk8F6YeyoNg1YtqXcTV9lwrvy"], ["updated_at", "2014-10-16 07:57:29.334510"], ["url", "http://google.com"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:57:29.337415"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:29.342877"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$ZX4jyYWH1/bH2zeHPceo2.UYtHV7Et0ojtZ2gh.vrVzBABahkSi/u"], ["updated_at", "2014-10-16 07:57:29.342877"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:57:29.346687"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-16 07:57:44.899461"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$FWPPaGyOSDw4G7N2eocNK.Z/8armtEXwt3ZU.YdO7IGaJinTmV8hq"], ["updated_at", "2014-10-16 07:57:44.899461"], ["url", "http://google.com"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"email1@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.2ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by V1::EmailsController#new as JSON
+  Parameters: {"email"=>"random@email.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'random@email.com' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.925851"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$TIGIqDJNTDVB7AIok0aPYuJo0sKF/P4rP1C38.OV.PW5MK9lRw/m2"], ["updated_at", "2014-10-16 07:57:44.925851"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.935710"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$2wJTOChTjQCVixkWD.makuaoaoMNFrz6rLiCwLSNe0oMt9DZZFoMS"], ["updated_at", "2014-10-16 07:57:44.935710"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"instagram", "link"=>"http://instagram.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "instagram_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["instagram_url", "http://instagram.com"], ["updated_at", "2014-10-16 07:57:44.938533"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.945483"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$44UI3wLlYx1LvmaERKliy.SWyWrt7tFOBFzLjW0A4iu3EHLVegxM6"], ["updated_at", "2014-10-16 07:57:44.945483"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.949410"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$vhZioP/pOZ7hOSow7CcyI.A9Z7dYKFyyzeUPqL22O15UJtO.bxMdK"], ["updated_at", "2014-10-16 07:57:44.949410"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"twitter", "link"=>"http://twitter.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "twitter_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["twitter_url", "http://twitter.com"], ["updated_at", "2014-10-16 07:57:44.951598"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.956295"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$WSSghHNDh4S.NrPSCKYAy.ld9a.dh.4jrdzG3gaAQ1KshEd7f1u7q"], ["updated_at", "2014-10-16 07:57:44.956295"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"facebook", "link"=>"http://facebook.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "facebook_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["facebook_url", "http://facebook.com"], ["updated_at", "2014-10-16 07:57:44.958619"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email7@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.964608"], ["email", "email7@gmail.com"], ["encrypted_password", "$2a$04$EWSBB55tdIhNI5TWsHOE5uLDAks68Vb9OJBbeeq.dzAj28wPv3ui."], ["updated_at", "2014-10-16 07:57:44.964608"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"tumblr", "link"=>"http://tumblr.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "tumblr_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["tumblr_url", "http://tumblr.com"], ["updated_at", "2014-10-16 07:57:44.966913"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email8@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at", "url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-16 07:57:44.971043"], ["email", "email8@gmail.com"], ["encrypted_password", "$2a$04$8yPFE0QxzxIh7Tbw.TfFx.SeOQtIUdPJ3yECB7DZOCrHoVvw3R9u6"], ["updated_at", "2014-10-16 07:57:44.971043"], ["url", "http://google.com"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by V1::UsersController#social as JSON
+  Parameters: {"type"=>"linkedin", "link"=>"http://linkedin.com", "user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "linkedin_url" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["linkedin_url", "http://linkedin.com"], ["updated_at", "2014-10-16 07:57:44.973003"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"

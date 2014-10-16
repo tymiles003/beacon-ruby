@@ -3,8 +3,7 @@ class V1::RegistrationsController < Devise::RegistrationsController
                      :if => Proc.new { |c| c.request.format == 'application/json' }
 
   def create
-    @user = User.new(user_params)
-    @user.save!
+    @user = User.create!(user_params)
     sign_in @user
   end
 
