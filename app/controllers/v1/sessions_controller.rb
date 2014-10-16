@@ -21,7 +21,7 @@ class V1::SessionsController < Devise::SessionsController
       render status: 401,
       json: {
         error: I18n.t("devise.failure.not_found_in_database")
-      }
+      } and return
     else 
       sign_in @user
     end
