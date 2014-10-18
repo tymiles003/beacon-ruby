@@ -7,11 +7,8 @@ class V1::EmailsController < V1::BaseController
 
 	def new
 		raise ActiveRecord::RecordNotFound if !params[:email]
-		if User.find_by_email(params[:email]).nil?
-			render status: 403,
-			json: {
-				error: "User not Found"
-			}
+		if User.find_by_email(params[:email].downcase).nil?
+			render status: 403
 		end
 	end
 
