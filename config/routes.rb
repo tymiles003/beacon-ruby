@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :user
+  devise_for :user, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   namespace :v1 do
 		devise_scope :user do

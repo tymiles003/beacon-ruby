@@ -254,6 +254,12 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+  config.omniauth :instagram, ENV['INSTAGRAM_CLIENT_ID'], ENV['INSTAGRAM_CLIENT_SECRET']
+  config.omniauth :linkedin, ENV['LINKEDIN_API_KEY'], ENV['LINKEDIN_SECRET_KEY']
+  config.omniauth :tumblr, ENV['TUMBLR_CONSUMER_KEY'], ENV['TUMBLR_SECRET_KEY']
+
   config.warden do |manager|
     manager.failure_app = Failure
   end

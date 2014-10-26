@@ -28,8 +28,15 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-group :development do 
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem 'omniauth-tumblr'
+gem 'omniauth-instagram'
+
+group :development, :test do 
 	gem 'pry-rails'
+	gem 'dotenv-rails'
 end
 
 group :test do 

@@ -7,6 +7,10 @@ class V1::RegistrationsController < Devise::RegistrationsController
     sign_in @user
   end
 
+  def new
+    binding.pry
+  end
+
   protected
 
   def user_params

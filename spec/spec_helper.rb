@@ -26,22 +26,19 @@ RSpec.configure do |config|
     Warden.test_mode!
   end
 
-  RSpec.configure do |config|
-    
-    config.after(:each) do
-      if Rails.env.test? || Rails.env.cucumber?
-        FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
-      end 
-    end
+  config.after(:each) do
+    if Rails.env.test? || Rails.env.cucumber?
+      FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+    end 
+  end
 
-    config.after(:all) do 
-      [User].each do |m|
-        m.all.each(&:destroy)
-        FileUtils.rm_rf(Dir["#{Rails.root}/#{m.to_s.underscore.tableize}"])
-        FileUtils.rm_rf(Dir["#{Rails.root}/public/#{m.to_s.underscore.tableize}"])
-      end
-      Warden.test_reset!
+  config.after(:all) do 
+    [User].each do |m|
+      m.all.each(&:destroy)
+      FileUtils.rm_rf(Dir["#{Rails.root}/#{m.to_s.underscore.tableize}"])
+      FileUtils.rm_rf(Dir["#{Rails.root}/public/#{m.to_s.underscore.tableize}"])
     end
+    Warden.test_reset!
   end
   
 end

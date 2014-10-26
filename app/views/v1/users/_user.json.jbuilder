@@ -1,2 +1,2 @@
 json.(user, :id, :email)
-json.profile_urls user.profile_urls
+json.social_urls user.social_urls

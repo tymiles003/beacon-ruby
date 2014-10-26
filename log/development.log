@@ -7625,3 +7625,2010 @@ Processing by V1::SessionsController#create as */*
   Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
 Completed 403 Forbidden in 55ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/v1/email/new?email=jake%40shindyapp.com" for 127.0.0.1 at 2014-10-17 09:33:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jake@shindyapp.com"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (2.0ms)
+Completed 200 OK in 27ms (Views: 9.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:34:02 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+Completed 403 Forbidden in 62ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:34:10 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+Completed 403 Forbidden in 57ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/v1/email/new?email=jake%40shindyapp.com" for 127.0.0.1 at 2014-10-17 09:35:47 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jake@shindyapp.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/v1/email/new?email=jake%40shindyapp.com" for 127.0.0.1 at 2014-10-17 09:36:02 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jake@shindyapp.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/v1/email/new?email=jake%40shindyapp.com" for 127.0.0.1 at 2014-10-17 09:43:57 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jake@shindyapp.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:44:01 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["current_sign_in_at", "2014-10-17 16:44:01.874931"], ["last_sign_in_at", "2014-10-16 08:46:47.033814"], ["sign_in_count", 3], ["updated_at", "2014-10-17 16:44:01.875711"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.5ms)
+  Rendered v1/sessions/create.json.jbuilder (5.1ms)
+Completed 200 OK in 70ms (Views: 10.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/v1/email/new?email=jake%40shindyapp.com" for 127.0.0.1 at 2014-10-17 09:52:27 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jake@shindyapp.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:52:30 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+Completed 403 Forbidden in 55ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:52:31 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+Completed 403 Forbidden in 58ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:52:32 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+Completed 403 Forbidden in 56ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:52:33 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1
+Completed 403 Forbidden in 57ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:52:48 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jake@shindyapp.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jake@shindyapp.com' LIMIT 1[0m
+Completed 403 Forbidden in 56ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:53:00 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:53:13 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 16:53:13.385120"], ["last_sign_in_at", "2014-10-16 01:27:13.105614"], ["sign_in_count", 7], ["updated_at", "2014-10-17 16:53:13.385503"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 62ms (Views: 4.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:54:23 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:54:26 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 16:54:26.980520"], ["last_sign_in_at", "2014-10-17 16:53:13.385120"], ["sign_in_count", 8], ["updated_at", "2014-10-17 16:54:26.980887"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 62ms (Views: 5.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:55:31 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:55:36 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 16:55:36.534661"], ["last_sign_in_at", "2014-10-17 16:54:26.980520"], ["sign_in_count", 9], ["updated_at", "2014-10-17 16:55:36.535059"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 61ms (Views: 4.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:56:02 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:56:11 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 16:56:11.343247"], ["last_sign_in_at", "2014-10-17 16:55:36.534661"], ["sign_in_count", 10], ["updated_at", "2014-10-17 16:56:11.343651"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 64ms (Views: 5.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:56:37 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:56:44 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 16:56:44.408411"], ["last_sign_in_at", "2014-10-17 16:56:11.343247"], ["sign_in_count", 11], ["updated_at", "2014-10-17 16:56:44.408809"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 61ms (Views: 4.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 09:57:50 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 09:57:57 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 16:57:57.492849"], ["last_sign_in_at", "2014-10-17 16:56:44.408411"], ["sign_in_count", 12], ["updated_at", "2014-10-17 16:57:57.493793"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 69ms (Views: 4.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:02:49 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:02:55 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 17:02:55.275911"], ["last_sign_in_at", "2014-10-17 16:57:57.492849"], ["sign_in_count", 13], ["updated_at", "2014-10-17 17:02:55.276380"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 5.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:03:38 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:03:41 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+Completed 403 Forbidden in 55ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:03:42 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+Completed 403 Forbidden in 56ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:03:42 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+Completed 403 Forbidden in 56ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:03:52 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 17:03:52.378114"], ["last_sign_in_at", "2014-10-17 17:02:55.275911"], ["sign_in_count", 14], ["updated_at", "2014-10-17 17:03:52.378490"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 63ms (Views: 5.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:05:23 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:05:29 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 17:05:29.919924"], ["last_sign_in_at", "2014-10-17 17:03:52.378114"], ["sign_in_count", 15], ["updated_at", "2014-10-17 17:05:29.920299"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 64ms (Views: 7.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:05:49 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:05:55 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 17:05:55.119378"], ["last_sign_in_at", "2014-10-17 17:05:29.919924"], ["sign_in_count", 16], ["updated_at", "2014-10-17 17:05:55.119834"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 63ms (Views: 4.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:06:21 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:06:25 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 17:06:25.631993"], ["last_sign_in_at", "2014-10-17 17:05:55.119378"], ["sign_in_count", 17], ["updated_at", "2014-10-17 17:06:25.632372"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 62ms (Views: 5.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:30:59 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:31:03 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 17:31:03.624467"], ["last_sign_in_at", "2014-10-17 17:06:25.631993"], ["sign_in_count", 18], ["updated_at", "2014-10-17 17:31:03.624805"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 62ms (Views: 4.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:32:08 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:32:13 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 17:32:13.257631"], ["last_sign_in_at", "2014-10-17 17:31:03.624467"], ["sign_in_count", 19], ["updated_at", "2014-10-17 17:32:13.258034"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 6.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:32:43 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:32:50 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-17 17:32:50.199679"], ["last_sign_in_at", "2014-10-17 17:32:13.257631"], ["sign_in_count", 20], ["updated_at", "2014-10-17 17:32:50.200018"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.2ms)
+Completed 200 OK in 67ms (Views: 5.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-17 10:34:15 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-17 10:34:18 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-17 17:34:18.392637"], ["last_sign_in_at", "2014-10-17 17:32:50.199679"], ["sign_in_count", 21], ["updated_at", "2014-10-17 17:34:18.393071"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 67ms (Views: 5.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 10:49:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (3.2ms)
+Completed 200 OK in 28ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 10:49:14 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 17:49:14.769314"], ["last_sign_in_at", "2014-10-17 17:34:18.392637"], ["sign_in_count", 22], ["updated_at", "2014-10-18 17:49:14.770118"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (4.3ms)
+Completed 200 OK in 69ms (Views: 8.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 10:49:15 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 10:51:03 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 5ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 10:51:10 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 10:51:15 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 17:51:15.597447"], ["last_sign_in_at", "2014-10-18 17:49:14.769314"], ["sign_in_count", 23], ["updated_at", "2014-10-18 17:51:15.597868"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.2ms)
+Completed 200 OK in 65ms (Views: 7.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 10:51:16 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 10:56:08 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:00:21 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:00:29 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:00:32 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 18:00:32.941135"], ["last_sign_in_at", "2014-10-18 17:51:15.597447"], ["sign_in_count", 24], ["updated_at", "2014-10-18 18:00:32.941572"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 6.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:00:33 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/v1/users/1/social" for 127.0.0.1 at 2014-10-18 11:02:34 -0700
+Processing by V1::UsersController#social as */*
+  Parameters: {"type"=>"facebook", "link"=>"https://www.facebook.com/app_scoped_user_id/812820075436467/", "user_id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/social.json.jbuilder (1.3ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/v1/users/1/social" for 127.0.0.1 at 2014-10-18 11:02:34 -0700
+Processing by V1::UsersController#social as */*
+  Parameters: {"type"=>"facebook", "link"=>"https://www.facebook.com/app_scoped_user_id/812820075436467/", "user_id"=>"1", "user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/social.json.jbuilder (0.9ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:04:35 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:04:41 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:04:45 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 18:04:45.897391"], ["last_sign_in_at", "2014-10-18 18:00:32.941135"], ["sign_in_count", 25], ["updated_at", "2014-10-18 18:04:45.897922"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (1.4ms)
+Completed 200 OK in 63ms (Views: 5.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:04:46 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:09:17 -0700
+
+SyntaxError (/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:28: syntax error, unexpected ':', expecting ']'
+    urls["facebook" : self.facebook_url] if self.facebook_url
+                     ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:28: syntax error, unexpected ']', expecting keyword_end
+    urls["facebook" : self.facebook_url] if self.facebook_url
+                                        ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:29: syntax error, unexpected ':', expecting ']'
+    urls["twitter" : self.twitter_url] if self.twitter_url
+                    ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:29: syntax error, unexpected ']', expecting keyword_end
+    urls["twitter" : self.twitter_url] if self.twitter_url
+                                      ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:30: syntax error, unexpected ':', expecting ']'
+    urls["instagram" : self.instagram_url] if self.instagram_url
+                      ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:30: syntax error, unexpected ']', expecting keyword_end
+    urls["instagram" : self.instagram_url] if self.instagram_url
+                                          ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:31: syntax error, unexpected ':', expecting ']'
+    urls["linkedin" : self.linkedin_url] if self.linkedin_url
+                     ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:31: syntax error, unexpected ']', expecting keyword_end
+    urls["linkedin" : self.linkedin_url] if self.linkedin_url
+                                        ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:32: syntax error, unexpected ':', expecting ']'
+    urls["tumblr" : self.tumblr_url] if self.tumblr_url
+                   ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:32: syntax error, unexpected ']', expecting keyword_end
+    urls["tumblr" : self.tumblr_url] if self.tumblr_url
+                                    ^):
+  app/models/user.rb:28: syntax error, unexpected ':', expecting ']'
+  app/models/user.rb:28: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:29: syntax error, unexpected ':', expecting ']'
+  app/models/user.rb:29: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:30: syntax error, unexpected ':', expecting ']'
+  app/models/user.rb:30: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:31: syntax error, unexpected ':', expecting ']'
+  app/models/user.rb:31: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:32: syntax error, unexpected ':', expecting ']'
+  app/models/user.rb:32: syntax error, unexpected ']', expecting keyword_end
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:09:50 -0700
+
+SyntaxError (/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:28: syntax error, unexpected ']', expecting keyword_end
+    urls["facebook"] = self.facebook_url] if self.facebook_url
+                                         ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:29: syntax error, unexpected ']', expecting keyword_end
+    urls["twitter"] = self.twitter_url] if self.twitter_url
+                                       ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:30: syntax error, unexpected ']', expecting keyword_end
+    urls["instagram"] = self.instagram_url] if self.instagram_url
+                                           ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:31: syntax error, unexpected ']', expecting keyword_end
+    urls["linkedin"] = self.linkedin_url] if self.linkedin_url
+                                         ^
+/Users/jakepeterson/Developer/ruby/beacon/app/models/user.rb:32: syntax error, unexpected ']', expecting keyword_end
+    urls["tumblr"] = self.tumblr_url] if self.tumblr_url
+                                     ^):
+  app/models/user.rb:28: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:29: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:30: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:31: syntax error, unexpected ']', expecting keyword_end
+  app/models/user.rb:32: syntax error, unexpected ']', expecting keyword_end
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:10:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:10:25 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.5ms)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:10:31 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 18:10:31.106394"], ["last_sign_in_at", "2014-10-18 18:04:45.897391"], ["sign_in_count", 26], ["updated_at", "2014-10-18 18:10:31.107483"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/sessions/create.json.jbuilder (2.5ms)
+Completed 200 OK in 67ms (Views: 6.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:10:31 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:18:24 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:18:28 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:18:31 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 18:18:31.084032"], ["last_sign_in_at", "2014-10-18 18:10:31.106394"], ["sign_in_count", 27], ["updated_at", "2014-10-18 18:18:31.084430"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 62ms (Views: 4.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:18:31 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:18:45 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:18:49 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.3ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:18:51 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 18:18:51.772784"], ["last_sign_in_at", "2014-10-18 18:18:31.084032"], ["sign_in_count", 28], ["updated_at", "2014-10-18 18:18:51.773133"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 62ms (Views: 4.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:18:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:19:02 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 11:19:05 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 11:19:08 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 18:19:08.891511"], ["last_sign_in_at", "2014-10-18 18:18:51.772784"], ["sign_in_count", 29], ["updated_at", "2014-10-18 18:19:08.891907"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 63ms (Views: 6.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 11:19:09 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:38:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 12:38:56 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 12:38:59 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 19:38:59.647264"], ["last_sign_in_at", "2014-10-18 18:19:08.891511"], ["sign_in_count", 30], ["updated_at", "2014-10-18 19:38:59.647629"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 63ms (Views: 5.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:39:00 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:39:20 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 12:39:24 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 12:39:26 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 19:39:26.834233"], ["last_sign_in_at", "2014-10-18 19:38:59.647264"], ["sign_in_count", 31], ["updated_at", "2014-10-18 19:39:26.834622"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.7ms)
+Completed 200 OK in 68ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:39:27 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:43:05 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 12:43:09 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 12:43:12 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-18 19:43:12.236090"], ["last_sign_in_at", "2014-10-18 19:39:26.834233"], ["sign_in_count", 32], ["updated_at", "2014-10-18 19:43:12.236501"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 61ms (Views: 4.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 12:43:12 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 13:21:02 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-18 13:21:10 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-18 13:21:14 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-18 20:21:14.298104"], ["last_sign_in_at", "2014-10-18 19:43:12.236090"], ["sign_in_count", 33], ["updated_at", "2014-10-18 20:21:14.298494"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.4ms)
+Completed 200 OK in 62ms (Views: 5.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-18 13:21:14 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-19 14:37:59 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-19 14:38:03 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-19 14:38:10 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-19 21:38:10.675976"], ["last_sign_in_at", "2014-10-18 20:21:14.298104"], ["sign_in_count", 34], ["updated_at", "2014-10-19 21:38:10.676406"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.5ms)
+Completed 200 OK in 63ms (Views: 6.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-19 14:38:11 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20141019214344)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "provider" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "uid" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141019214344"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/users/omniauth/facebook.json" for 127.0.0.1 at 2014-10-19 15:21:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/omniauth/facebook.json"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.6ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.7ms)
+
+
+Started POST "/users/omniauth/facebook" for 127.0.0.1 at 2014-10-19 15:22:25 -0700
+
+ActionController::RoutingError (No route matches [POST] "/users/omniauth/facebook"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.9ms)
+
+
+Started POST "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:22:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:50:31 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:51:24 -0700
+
+
+Started POST "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:53:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:53:33 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 15:53:40 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQBZUE1zhR_EfU28w8HmHbC36YI7MX3dCif7SWfL-jbRjsjSaojxiqxgpr2VSuBnvzIfVRqjcw1imd4ZRMt39snjiM0gNFUmGvRMSpP-PqdAtH2NiPvTt6nvEsITF7XY_qSkCD3qIeE0Hh9cJciGBLTAMFRmPjY6vljx36-A7tuwi-N6EkgVUkYSfhUow7tbAm_xiw-QnRtzlnTP8UH40Wj4i9BKqPncWYQsNWdVbM-WHQOoIpPobjPv3WzGZ5g1BPNGmvtDHydiD79mcKFYjASm-9VoFJeWqkPAOIAAzU6_ktK2lMDkYtPpcoeKZilzmNWDSBVzdRzwx6Ie9gcCMFQ1&state=c0ea5120c1247f33ccb0e491b732d4dd46c45e20637e41a4" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBZUE1zhR_EfU28w8HmHbC36YI7MX3dCif7SWfL-jbRjsjSaojxiqxgpr2VSuBnvzIfVRqjcw1imd4ZRMt39snjiM0gNFUmGvRMSpP-PqdAtH2NiPvTt6nvEsITF7XY_qSkCD3qIeE0Hh9cJciGBLTAMFRmPjY6vljx36-A7tuwi-N6EkgVUkYSfhUow7tbAm_xiw-QnRtzlnTP8UH40Wj4i9BKqPncWYQsNWdVbM-WHQOoIpPobjPv3WzGZ5g1BPNGmvtDHydiD79mcKFYjASm-9VoFJeWqkPAOIAAzU6_ktK2lMDkYtPpcoeKZilzmNWDSBVzdRzwx6Ie9gcCMFQ1", "state"=>"c0ea5120c1247f33ccb0e491b732d4dd46c45e20637e41a4"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (2.0ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 89ms (Views: 75.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-19 16:00:19 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:00:37 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQCY4QCB0UIjYK9m_aOlaJvclnMRMiZqx_FJRCEo6XbGJCdKXxyansYnUQcfehAm0n8d-I2MzNwCh7s2xFA_Yf-_mPm5eOQrjjglN2GRkvK_xWZ-A1BVOKTZ6WOZqlj4U1A0xp-y2eGu17sJNXlt6R68irIB6n_qYEUK5MiFxhe2lTnv0KZW8urXyuQksevy0kAoagcBMcfZT8GIlCwm9TK9jzBPlLhj1HhWCsDvdUCBP-LIuOh-qCrRM53lOIsr4CjqB2JK6SLKHrXAvXeYWXl9f_Ew0y6OlIjPda5NiXZDNqk98a4ph9kHiOzhySK_M7szIWNCIRorSfEA5reauLsE&state=ba3169e0baf21a4591a35edf1cca595390ce0382040b997a" for 127.0.0.1 at 2014-10-19 16:00:37 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCY4QCB0UIjYK9m_aOlaJvclnMRMiZqx_FJRCEo6XbGJCdKXxyansYnUQcfehAm0n8d-I2MzNwCh7s2xFA_Yf-_mPm5eOQrjjglN2GRkvK_xWZ-A1BVOKTZ6WOZqlj4U1A0xp-y2eGu17sJNXlt6R68irIB6n_qYEUK5MiFxhe2lTnv0KZW8urXyuQksevy0kAoagcBMcfZT8GIlCwm9TK9jzBPlLhj1HhWCsDvdUCBP-LIuOh-qCrRM53lOIsr4CjqB2JK6SLKHrXAvXeYWXl9f_Ew0y6OlIjPda5NiXZDNqk98a4ph9kHiOzhySK_M7szIWNCIRorSfEA5reauLsE", "state"=>"ba3169e0baf21a4591a35edf1cca595390ce0382040b997a"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:00:37 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.6ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:00:43 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:00:44 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQBg3n44If3X4QUWPsFeujPkwXwK0Lz9-1J8B97FTJ6J85J67DWkGhsYLxVSozY8Wd5qg3J1A5pULzRweIr9LhP8iBG_ntjh6NkWZOgMk4-0xQyzdJwi9Fc_zi2_scLo3755HsND-ffSShtxEFGjxlUC35nK1aNc0ZLW7C9tpdJf5D0g1KRPUuV1ytwIMwOeddApXM0KYCjJpYWaOwqVGOHvFno0v6v-G-XIn6yr6vTUpLofeng5-Me803n1bgGF_R6OxCNOTVjAlj0SCU6ry4iU-emsOb4tD4DOWimE9vdo2L0IWSGhYHskQKZPVy7qVCNK_CRn_hAvwG5ttSYQOQna&state=412692f6202e717872ca04bac77dd29db10fbeb42713eb3a" for 127.0.0.1 at 2014-10-19 16:00:44 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBg3n44If3X4QUWPsFeujPkwXwK0Lz9-1J8B97FTJ6J85J67DWkGhsYLxVSozY8Wd5qg3J1A5pULzRweIr9LhP8iBG_ntjh6NkWZOgMk4-0xQyzdJwi9Fc_zi2_scLo3755HsND-ffSShtxEFGjxlUC35nK1aNc0ZLW7C9tpdJf5D0g1KRPUuV1ytwIMwOeddApXM0KYCjJpYWaOwqVGOHvFno0v6v-G-XIn6yr6vTUpLofeng5-Me803n1bgGF_R6OxCNOTVjAlj0SCU6ry4iU-emsOb4tD4DOWimE9vdo2L0IWSGhYHskQKZPVy7qVCNK_CRn_hAvwG5ttSYQOQna", "state"=>"412692f6202e717872ca04bac77dd29db10fbeb42713eb3a"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:00:44 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:05:20 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQD7sX1JdNPk6L03cKfzwp4sHsm-9FNl6-HA-ccWfmDz4UguL12GKTOtpF_-S7neluz32h10q53fqIV-dzT6UWhY09eyOsrfmEl3KqjuiDu8YWbATZwKCFv-B2bug8ST7OKAFwt4xsDrnpQ6C5LSti-fH6BnT8RcdKKvSNOjVnMMs8VcnAkuZJ-KSHeC2GVH_Pj4XpL3YDfpitcdoWNddTQpJgAM21LgwVKkUlvVyDEk8hQhojwEJO6BQzeHKi01RGjsG9WmpWQpH9EQOjL9-PW8A94NTWXUOaKNGQ5rgO3pMTHDPH-0rlLaowS0eESlVinX0y4aSrL94kU8eSTVUjp6&state=ddb5affc9f857d6b945d4dded7f8659c7a39d0b29f04fcab" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQD7sX1JdNPk6L03cKfzwp4sHsm-9FNl6-HA-ccWfmDz4UguL12GKTOtpF_-S7neluz32h10q53fqIV-dzT6UWhY09eyOsrfmEl3KqjuiDu8YWbATZwKCFv-B2bug8ST7OKAFwt4xsDrnpQ6C5LSti-fH6BnT8RcdKKvSNOjVnMMs8VcnAkuZJ-KSHeC2GVH_Pj4XpL3YDfpitcdoWNddTQpJgAM21LgwVKkUlvVyDEk8hQhojwEJO6BQzeHKi01RGjsG9WmpWQpH9EQOjL9-PW8A94NTWXUOaKNGQ5rgO3pMTHDPH-0rlLaowS0eESlVinX0y4aSrL94kU8eSTVUjp6", "state"=>"ddb5affc9f857d6b945d4dded7f8659c7a39d0b29f04fcab"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-19 16:05:21 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:07:25 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQD4V7KYQeJhNZWvw6dxze0GpVSFhBl-USb_FbcG2kGXatz8tmsUgxB3tj7_X4o8cg8QLS08DlsGUx_lzYUDgDJXkVxW2yP-Oiw_Cn2APK8zlFUpGvFl4JdVi0DtmjbYuksdGiEH14J22ZHCjZhGysooCg_kmmJayvEutLoMvFWaSZfs6-vy5qugvHHZPmvfA4w4xrZb0iSQOq27mK4cv8TWPEkdlNvHZ0w2nk2pd4lbr-a_bhLW4CByit4ZhRMA0H3H3kT3K6EmcaqfREExrsN9xlA--GgFdIxPL7be8v0XqyuppZ3oxC3JoChcVL6ia1NzBq5n3ktLbOatW6nfCWjq&state=3d4b6124cfaf0d6c66d1558c5a3772e7131bd10e0579e8ed" for 127.0.0.1 at 2014-10-19 16:07:25 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQD4V7KYQeJhNZWvw6dxze0GpVSFhBl-USb_FbcG2kGXatz8tmsUgxB3tj7_X4o8cg8QLS08DlsGUx_lzYUDgDJXkVxW2yP-Oiw_Cn2APK8zlFUpGvFl4JdVi0DtmjbYuksdGiEH14J22ZHCjZhGysooCg_kmmJayvEutLoMvFWaSZfs6-vy5qugvHHZPmvfA4w4xrZb0iSQOq27mK4cv8TWPEkdlNvHZ0w2nk2pd4lbr-a_bhLW4CByit4ZhRMA0H3H3kT3K6EmcaqfREExrsN9xlA--GgFdIxPL7be8v0XqyuppZ3oxC3JoChcVL6ia1NzBq5n3ktLbOatW6nfCWjq", "state"=>"3d4b6124cfaf0d6c66d1558c5a3772e7131bd10e0579e8ed"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 16:07:26 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:08:26 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQBzGzljpGeSaDC82jk5BDl1zMdNl0L6DVSJ5XKfO5QI1K5c_VQgpXa3TBo5IUZz9n8zE9Lv0JCM5uXJWBjNPoK7J_kaw91_nCBZRTcIKEv-E6Msdoaxr38DGYRlNRryDfSXY_2XYyOhKdvaNoRfoihHPkBCKyPxmUfs-TBdum7opBxlqVBkALCoIZecOYklJ_p1ma4fIiSRB_QmGWmjwWF1hZvReFo0QEzd6IIFrfQFQp1mbIHkXl9I7G8LUKNk3IpWkC1Y2LlxOCrinCzMNT4PcmYptR_mvHJUq9FnfCVtGn2TQ9bFJza06MQHd5xocgEEqFxcqFX5xI1DGot8EDN-&state=ea4f76b88aeca4e680eb2b04973d169720a84fe413a73614" for 127.0.0.1 at 2014-10-19 16:08:26 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBzGzljpGeSaDC82jk5BDl1zMdNl0L6DVSJ5XKfO5QI1K5c_VQgpXa3TBo5IUZz9n8zE9Lv0JCM5uXJWBjNPoK7J_kaw91_nCBZRTcIKEv-E6Msdoaxr38DGYRlNRryDfSXY_2XYyOhKdvaNoRfoihHPkBCKyPxmUfs-TBdum7opBxlqVBkALCoIZecOYklJ_p1ma4fIiSRB_QmGWmjwWF1hZvReFo0QEzd6IIFrfQFQp1mbIHkXl9I7G8LUKNk3IpWkC1Y2LlxOCrinCzMNT4PcmYptR_mvHJUq9FnfCVtGn2TQ9bFJza06MQHd5xocgEEqFxcqFX5xI1DGot8EDN-", "state"=>"ea4f76b88aeca4e680eb2b04973d169720a84fe413a73614"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-19 16:08:27 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-19 16:09:41 -0700
+
+
+Started GET "/user/auth/facebook/callback?code=AQBoVxR3iNZyr6QaAG98jRi3iq6K42qTqzXKCujJVmLVVU9sgmAweK4mwVHptnMikqssAcnNBU723_STAyaU9GeFqqSBdvgyMHK4ahu7vx64xskWOay4_V8nHm_4FbJfVBeVgEp7xn5pIvZJIdjwHtHeqlIWs8P7S4GyQedMnvY365Dr3R4_ANpr3UbnHtSHn5i7jOu4TAccTx40PVnn3bLJCBaHhanv4Czm3eKsZ-GvbQQOm_DYUOXn7v7DQfKG44GwPji9YVFEQhD4Tlm_4ms2f32yF5JqMdWq9aDQFK7_v4JaLPeY8wfxY0PKJ1IyO5BZLlapHL6z2F4Xm-dWoJOT&state=4d2601840ce87108c42af286a9662d1e6c530979e3382772" for 127.0.0.1 at 2014-10-19 16:09:41 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBoVxR3iNZyr6QaAG98jRi3iq6K42qTqzXKCujJVmLVVU9sgmAweK4mwVHptnMikqssAcnNBU723_STAyaU9GeFqqSBdvgyMHK4ahu7vx64xskWOay4_V8nHm_4FbJfVBeVgEp7xn5pIvZJIdjwHtHeqlIWs8P7S4GyQedMnvY365Dr3R4_ANpr3UbnHtSHn5i7jOu4TAccTx40PVnn3bLJCBaHhanv4Czm3eKsZ-GvbQQOm_DYUOXn7v7DQfKG44GwPji9YVFEQhD4Tlm_4ms2f32yF5JqMdWq9aDQFK7_v4JaLPeY8wfxY0PKJ1IyO5BZLlapHL6z2F4Xm-dWoJOT", "state"=>"4d2601840ce87108c42af286a9662d1e6c530979e3382772"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-19 16:09:42 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 00:39:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-21 00:39:39 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (2.9ms)
+Completed 200 OK in 25ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-21 00:39:42 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-21 07:39:42.805939"], ["last_sign_in_at", "2014-10-19 21:38:10.675976"], ["sign_in_count", 35], ["updated_at", "2014-10-21 07:39:42.806810"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (4.5ms)
+Completed 200 OK in 73ms (Views: 8.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 00:39:43 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 00:41:17 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 01:02:37 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-21 01:02:41 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-21 01:02:48 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-21 08:02:48.065902"], ["last_sign_in_at", "2014-10-21 07:39:42.805939"], ["sign_in_count", 36], ["updated_at", "2014-10-21 08:02:48.066369"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 5.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 01:02:48 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 01:26:07 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-21 01:26:26 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-21 01:26:29 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-21 08:26:29.337205"], ["last_sign_in_at", "2014-10-21 08:02:48.065902"], ["sign_in_count", 37], ["updated_at", "2014-10-21 08:26:29.337642"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 5.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-21 01:26:29 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:18:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 10ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-23 20:19:00 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (3.2ms)
+Completed 200 OK in 22ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-23 20:19:03 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-24 03:19:03.508196"], ["last_sign_in_at", "2014-10-21 08:26:29.337205"], ["sign_in_count", 38], ["updated_at", "2014-10-24 03:19:03.509150"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (4.3ms)
+Completed 200 OK in 72ms (Views: 10.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:19:04 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:19:09 -0700
+
+ActionController::RoutingError (No route matches [POST] "/v1/user/auth/twitter"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.6ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:19:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `authenticate_user!' for #<V1::UsersController:0x007f8604cfe1a8>):
+  activesupport (4.1.5) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:160:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:160:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:25:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-23 20:25:54 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.4ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-23 20:25:57 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-24 03:25:57.323787"], ["last_sign_in_at", "2014-10-24 03:19:03.508196"], ["sign_in_count", 39], ["updated_at", "2014-10-24 03:25:57.324645"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/sessions/create.json.jbuilder (2.7ms)
+Completed 200 OK in 68ms (Views: 6.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:25:57 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:26:00 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:35:59 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-23 20:36:02 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-23 20:36:05 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-24 03:36:05.333292"], ["last_sign_in_at", "2014-10-24 03:25:57.323787"], ["sign_in_count", 40], ["updated_at", "2014-10-24 03:36:05.333723"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 64ms (Views: 6.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:36:05 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:36:24 -0700
+
+
+Started POST "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:36:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:37:18 -0700
+
+
+Started POST "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:38:18 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-23 20:39:11 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:39:27 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 5ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-23 20:39:31 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.5ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-23 20:39:37 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-24 03:39:37.537358"], ["last_sign_in_at", "2014-10-24 03:36:05.333292"], ["sign_in_count", 41], ["updated_at", "2014-10-24 03:39:37.538244"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (4.3ms)
+Completed 200 OK in 70ms (Views: 9.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:39:38 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter?=" for 127.0.0.1 at 2014-10-23 20:39:39 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:40:39 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-23 20:40:45 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-23 20:40:48 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-24 03:40:48.862421"], ["last_sign_in_at", "2014-10-24 03:39:37.537358"], ["sign_in_count", 42], ["updated_at", "2014-10-24 03:40:48.862907"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 66ms (Views: 6.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-23 20:40:49 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-26 13:38:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/user/auth/facebook/callback?code=AQDVsqD8SbcKHn2ovrh41DiyNpJLZTSELjsm0wshopB3wghPP8ArC7xzEwWoDTvSN91vEL_c7Et5WV3FbVD3uX5vpLEr-XN7Me6QUuHIdXPuPXxBqmuOd_BaAoaN77eVBKL0mDCHjEkIOFN9eb-nD5Pik1x6CArYnh9z4MbGzH9g6_tBz2woRva3t878nI1kQQyTGpGgXUfjKSxnAn8glZ6Y0QMyvYKsJLPPcVwiwx0UvZgEFBAFO0Zz5cuPC9V2-yBgqIvJrH2CGKItdzM8hQtMzLB1FruI00-RcRF4e9aTIMLwwvIRCfbK5cHZDb3-4DeLnBhPSmfHSGk1AaxnRnFW&state=f84a66913cd1a2501fc2db1f8f6fc0535926854175c247b4" for 127.0.0.1 at 2014-10-26 13:38:02 -0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDVsqD8SbcKHn2ovrh41DiyNpJLZTSELjsm0wshopB3wghPP8ArC7xzEwWoDTvSN91vEL_c7Et5WV3FbVD3uX5vpLEr-XN7Me6QUuHIdXPuPXxBqmuOd_BaAoaN77eVBKL0mDCHjEkIOFN9eb-nD5Pik1x6CArYnh9z4MbGzH9g6_tBz2woRva3t878nI1kQQyTGpGgXUfjKSxnAn8glZ6Y0QMyvYKsJLPPcVwiwx0UvZgEFBAFO0Zz5cuPC9V2-yBgqIvJrH2CGKItdzM8hQtMzLB1FruI00-RcRF4e9aTIMLwwvIRCfbK5cHZDb3-4DeLnBhPSmfHSGk1AaxnRnFW", "state"=>"f84a66913cd1a2501fc2db1f8f6fc0535926854175c247b4"}
+Redirected to http://localhost:3000/user/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (2.1ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 83ms (Views: 70.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:03 -0700
+
+
+Started GET "/user/auth/instagram" for 127.0.0.1 at 2014-10-26 13:38:06 -0700
+
+
+Started GET "/user/auth/instagram" for 127.0.0.1 at 2014-10-26 13:38:06 -0700
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2014-10-26 13:38:37 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-26 13:38:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-26 13:38:38 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-26 13:38:40 -0700
+
+
+Started GET "/user/auth/facebook" for 127.0.0.1 at 2014-10-26 13:38:40 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:38:57 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:38:58 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:39:17 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-26 13:39:21 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (3.8ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-26 13:39:24 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-26 20:39:25.044067"], ["last_sign_in_at", "2014-10-24 03:40:48.862421"], ["sign_in_count", 43], ["updated_at", "2014-10-26 20:39:25.044911"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (1.8ms)
+Completed 200 OK in 67ms (Views: 6.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:39:25 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:39:46 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-26 13:39:49 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-26 13:39:54 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-26 20:39:54.694165"], ["last_sign_in_at", "2014-10-26 20:39:25.044067"], ["sign_in_count", 44], ["updated_at", "2014-10-26 20:39:54.694622"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.1ms)
+Completed 200 OK in 64ms (Views: 5.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:39:55 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:40:00 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:40:22 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:40:24 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=E7rTviQ6AAoQpNf5OLUezQhzMbXhhfC7&oauth_verifier=3egg4vFjuDXekC0ZibgGIisea1Miy37E" for 127.0.0.1 at 2014-10-26 13:40:42 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"E7rTviQ6AAoQpNf5OLUezQhzMbXhhfC7", "oauth_verifier"=>"3egg4vFjuDXekC0ZibgGIisea1Miy37E"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Redirected to http://localhost:3000/user/sign_up
+Completed 302 Found in 59ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/user/sign_up" for 127.0.0.1 at 2014-10-26 13:40:43 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (1.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/registrations/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:41:36 -0700
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:41:36 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=63MpvAPBihdbTwwKVFoKPdJ7HcSeDMZT&oauth_verifier=L00nPUfLStOkYcuB7yYmlEzLrBFQABwT" for 127.0.0.1 at 2014-10-26 13:41:39 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"63MpvAPBihdbTwwKVFoKPdJ7HcSeDMZT", "oauth_verifier"=>"L00nPUfLStOkYcuB7yYmlEzLrBFQABwT"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/user/sign_up
+Completed 302 Found in 65ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/user/sign_up" for 127.0.0.1 at 2014-10-26 13:41:39 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.9ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:45:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-26 13:45:09 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.5ms)
+Completed 200 OK in 20ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-26 13:45:14 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-26 20:45:14.591539"], ["last_sign_in_at", "2014-10-26 20:39:54.694165"], ["sign_in_count", 45], ["updated_at", "2014-10-26 20:45:14.592478"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (3.2ms)
+Completed 200 OK in 71ms (Views: 7.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 13:45:15 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 13:45:17 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=q8NreEDIbpRoLLATWR2tm8QkMZ9iyZKN&oauth_verifier=9lbA02Pu3tHQKXIFp5ARXzepvByhRckI" for 127.0.0.1 at 2014-10-26 13:45:37 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"q8NreEDIbpRoLLATWR2tm8QkMZ9iyZKN", "oauth_verifier"=>"9lbA02Pu3tHQKXIFp5ARXzepvByhRckI"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to beacon://twitter
+Completed 302 Found in 60ms (ActiveRecord: 0.3ms)
