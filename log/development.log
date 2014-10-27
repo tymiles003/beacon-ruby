@@ -9632,3 +9632,242 @@ Processing by Users::OmniauthCallbacksController#twitter as HTML
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
 Redirected to beacon://twitter
 Completed 302 Found in 60ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 19:26:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-26 19:26:14 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (2.7ms)
+Completed 200 OK in 33ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-26 19:26:17 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-27 02:26:17.955302"], ["last_sign_in_at", "2014-10-26 20:45:14.591539"], ["sign_in_count", 46], ["updated_at", "2014-10-27 02:26:17.956143"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.4ms)
+  Rendered v1/sessions/create.json.jbuilder (4.6ms)
+Completed 200 OK in 70ms (Views: 9.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 19:26:18 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1//user/auth/twitter" for 127.0.0.1 at 2014-10-26 19:26:20 -0700
+
+ActionController::RoutingError (No route matches [GET] "/v1/user/auth/twitter"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jakepeterson/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.1ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.5ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 19:29:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/v1/email/new?email=asdf" for 127.0.0.1 at 2014-10-26 19:29:28 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"asdf"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'asdf' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.3ms)
+Completed 403 Forbidden in 17ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-26 19:31:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (1.4ms)
+Completed 200 OK in 34ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-26 19:31:50 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-27 02:31:50.301309"], ["last_sign_in_at", "2014-10-27 02:26:17.955302"], ["sign_in_count", 47], ["updated_at", "2014-10-27 02:31:50.302181"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/sessions/create.json.jbuilder (2.6ms)
+Completed 200 OK in 69ms (Views: 7.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-26 19:31:50 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-26 19:31:51 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=ldeE9286zbK0RbT8pnlIRGqUJEGUma7N&oauth_verifier=IsA3Oq73qFvKvShPzj88CBujnvioJwyb" for 127.0.0.1 at 2014-10-26 19:32:12 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"ldeE9286zbK0RbT8pnlIRGqUJEGUma7N", "oauth_verifier"=>"IsA3Oq73qFvKvShPzj88CBujnvioJwyb"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to beacon://twitter
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/user/sign_up" for 127.0.0.1 at 2014-10-27 00:25:06 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/shared/_links.erb (4.2ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/devise-3.2.4/app/views/devise/registrations/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 121ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-27 00:25:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-27 00:25:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-27 00:25:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-27 00:25:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-27 00:25:07 -0700
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 00:26:04 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-27 00:26:09 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 19ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-27 00:26:12 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-27 07:26:12.632311"], ["last_sign_in_at", "2014-10-27 02:31:50.301309"], ["sign_in_count", 48], ["updated_at", "2014-10-27 07:26:12.633400"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/sessions/create.json.jbuilder (1.8ms)
+Completed 200 OK in 66ms (Views: 7.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 00:26:13 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-27 00:26:14 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=Lt6LoIZmVEyr0xKQAZUIgCU0IFGknoMY&oauth_verifier=zeNLZaHKDRxiBVITzWj50ScYvC5cfxgW" for 127.0.0.1 at 2014-10-27 00:26:16 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"Lt6LoIZmVEyr0xKQAZUIgCU0IFGknoMY", "oauth_verifier"=>"zeNLZaHKDRxiBVITzWj50ScYvC5cfxgW"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 34355111ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 09:58:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 09:58:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 09:58:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 09:58:52 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-27 10:15:25 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmailcom" for 127.0.0.1 at 2014-10-27 10:15:30 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmailcom"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmailcom' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 403 Forbidden in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)

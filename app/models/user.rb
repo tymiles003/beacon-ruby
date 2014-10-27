@@ -34,11 +34,18 @@ class User < ActiveRecord::Base
     return urls
   end
 
-  def self.from_omniauth(auth)
+  def self.from_omniauth(auth, type)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.email
+      if type == 'twitter'
+        user.twitter_url = auth.info.urls["Twitter"]
+        user.profile_image_url = auth.info.image
+      end
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  def profile_image_url=(url)
+    # TODO: integrate paperclip
   end
 
   def self.new_with_session(params, session)
