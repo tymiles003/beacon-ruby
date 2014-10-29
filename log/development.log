@@ -9871,3 +9871,536 @@ Processing by V1::EmailsController#new as */*
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmailcom' LIMIT 1
   Rendered v1/emails/new.json.jbuilder (0.1ms)
 Completed 403 Forbidden in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-29 02:10:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (2.6ms)
+Completed 200 OK in 39ms (Views: 11.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-29 02:10:16 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-29 09:10:16.841244"], ["last_sign_in_at", "2014-10-27 07:26:12.632311"], ["sign_in_count", 49], ["updated_at", "2014-10-29 09:10:16.842295"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.3ms)
+  Rendered v1/sessions/create.json.jbuilder (5.4ms)
+Completed 200 OK in 74ms (Views: 10.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:10:17 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:10:19 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=pUEckZJo9WWG0jTgAGlLYnk2vCsOH6ct&oauth_verifier=JF9CvQvyUB02jocf9mbEDiGrSN9Tv5uZ" for 127.0.0.1 at 2014-10-29 02:10:21 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"pUEckZJo9WWG0jTgAGlLYnk2vCsOH6ct", "oauth_verifier"=>"JF9CvQvyUB02jocf9mbEDiGrSN9Tv5uZ"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 66ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:10:25 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:11:17 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:20:08 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-29 02:20:12 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 11ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-29 02:20:18 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-29 09:20:18.094482"], ["last_sign_in_at", "2014-10-29 09:10:16.841244"], ["sign_in_count", 50], ["updated_at", "2014-10-29 09:20:18.094983"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.2ms)
+Completed 200 OK in 66ms (Views: 7.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:30:14 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-29 02:30:21 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-29 02:30:24 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-29 09:30:25.040217"], ["last_sign_in_at", "2014-10-29 09:20:18.094482"], ["sign_in_count", 51], ["updated_at", "2014-10-29 09:30:25.040663"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (0.9ms)
+Completed 200 OK in 63ms (Views: 4.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:30:49 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/v1/email/new?email=jsksma2%40gmail.com" for 127.0.0.1 at 2014-10-29 02:30:55 -0700
+Processing by V1::EmailsController#new as */*
+  Parameters: {"email"=>"jsksma2@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1
+  Rendered v1/emails/new.json.jbuilder (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v1/sessions" for 127.0.0.1 at 2014-10-29 02:31:04 -0700
+Processing by V1::SessionsController#create as */*
+  Parameters: {"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jsksma2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jsksma2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-29 09:31:04.876905"], ["last_sign_in_at", "2014-10-29 09:30:25.040217"], ["sign_in_count", 52], ["updated_at", "2014-10-29 09:31:04.877476"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/sessions/create.json.jbuilder (1.0ms)
+Completed 200 OK in 66ms (Views: 4.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:31:10 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:31:15 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:31:46 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=kYrwMoL3l9tWYtaReOchjbgbNtsKSSCG&oauth_verifier=QzFasaQWXVfdb1Iw8m0MVw3nqYorQiTk" for 127.0.0.1 at 2014-10-29 02:31:49 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"kYrwMoL3l9tWYtaReOchjbgbNtsKSSCG", "oauth_verifier"=>"QzFasaQWXVfdb1Iw8m0MVw3nqYorQiTk"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 170909ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:34:40 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 12ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:34:55 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 15ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:35:37 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 14ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:35:51 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 14ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:36:45 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 20ms (Views: 5.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:38:54 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:38:55 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=lrV5ETcedb60OiqaUcEMbhRBd8CmSGUX&oauth_verifier=obCkIDMrM6FfWMyJ7MriWoh8fv6FjjZM" for 127.0.0.1 at 2014-10-29 02:38:58 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"lrV5ETcedb60OiqaUcEMbhRBd8CmSGUX", "oauth_verifier"=>"obCkIDMrM6FfWMyJ7MriWoh8fv6FjjZM"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Redirected to beacon://twitter/
+Completed 302 Found in 131756ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:41:10 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 16ms (Views: 4.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:41:12 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=inABH9UkCx6FoinFeOsft1v6uVcAsl7y&oauth_verifier=UbMNRXZH2nV05x5xsioZOFJL3GFKNtO3" for 127.0.0.1 at 2014-10-29 02:41:14 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"inABH9UkCx6FoinFeOsft1v6uVcAsl7y", "oauth_verifier"=>"UbMNRXZH2nV05x5xsioZOFJL3GFKNtO3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "provider", "sign_in_count", "twitter_url", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 09:41:15.409692"], ["current_sign_in_at", "2014-10-29 09:41:15.409135"], ["current_sign_in_ip", "127.0.0.1"], ["encrypted_password", "$2a$10$.faxGZdaY2cZdAI3CC77SuXvUpMADOY4A0viAo/h/fBmIslic6DN."], ["last_sign_in_at", "2014-10-29 09:41:15.409135"], ["last_sign_in_ip", "127.0.0.1"], ["provider", "twitter"], ["sign_in_count", 1], ["twitter_url", "https://twitter.com/_jakepeterson"], ["uid", "145018634"], ["updated_at", "2014-10-29 09:41:15.409692"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Redirected to beacon://twitter/
+Completed 302 Found in 25549ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:41:40 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 17ms (Views: 4.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:41:48 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:41:50 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=zxH4WLNrjxDBnibubj4y8LfGafF6ppTV&oauth_verifier=JaOUK6A8qo9RR5WRr3cjP0OnmJtbk4YQ" for 127.0.0.1 at 2014-10-29 02:41:53 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"zxH4WLNrjxDBnibubj4y8LfGafF6ppTV", "oauth_verifier"=>"JaOUK6A8qo9RR5WRr3cjP0OnmJtbk4YQ"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 5[0m  [["current_sign_in_at", "2014-10-29 09:41:54.095227"], ["sign_in_count", 2], ["updated_at", "2014-10-29 09:41:54.095782"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to beacon://twitter/
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:41:54 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:43:05 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=tbwfVGNr38RflwfEjSl7XZ4kHwHF0vKD&oauth_verifier=IRZtzCHYU5Qv3JMttk8Zh2zaGB6yBnD4" for 127.0.0.1 at 2014-10-29 02:43:07 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"tbwfVGNr38RflwfEjSl7XZ4kHwHF0vKD", "oauth_verifier"=>"IRZtzCHYU5Qv3JMttk8Zh2zaGB6yBnD4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to beacon://twitter/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:43:08 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:43:28 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 17ms (Views: 5.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:43:29 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=tpGj48odxuoyimZEJIzvA8YuAb78emvW&oauth_verifier=OFC0Pc0EHPDluojrWZslMH92MXGVFSdq" for 127.0.0.1 at 2014-10-29 02:43:31 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"tpGj48odxuoyimZEJIzvA8YuAb78emvW", "oauth_verifier"=>"OFC0Pc0EHPDluojrWZslMH92MXGVFSdq"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to beacon://twitter/
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:43:32 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:43:43 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=OV5gWFkJTJSfxuKH2emo5qFjRGSvp7ya&oauth_verifier=4svSkw5sbEbzstD6oo3mIp3aQ1ut79PZ" for 127.0.0.1 at 2014-10-29 02:43:46 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"OV5gWFkJTJSfxuKH2emo5qFjRGSvp7ya", "oauth_verifier"=>"4svSkw5sbEbzstD6oo3mIp3aQ1ut79PZ"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to beacon://twitter/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:43:47 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:46:35 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=tHqwpnOiRD3ZoaU0F1ARAeLbDeBQNL58&oauth_verifier=OmgU4VYfDi8jUSEkx7926er4hhr9c6Hi" for 127.0.0.1 at 2014-10-29 02:46:37 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"tHqwpnOiRD3ZoaU0F1ARAeLbDeBQNL58", "oauth_verifier"=>"OmgU4VYfDi8jUSEkx7926er4hhr9c6Hi"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 32160ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:47:10 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 14ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:47:12 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=vXJGISQlRxOOjTwXnar9EWh97xKENG6R&oauth_verifier=kOJHLewh8pXmFjlxGCnBOCNMJfTHuo7c" for 127.0.0.1 at 2014-10-29 02:47:15 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"vXJGISQlRxOOjTwXnar9EWh97xKENG6R", "oauth_verifier"=>"kOJHLewh8pXmFjlxGCnBOCNMJfTHuo7c"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 213365ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:50:49 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:50:49 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=2YOhFe1A4eBouy1gHwYpn8hmVvsJZF6h&oauth_verifier=6sBW6mPQIKzig0XwZmxMfWtSztjc5AIo" for 127.0.0.1 at 2014-10-29 02:50:54 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"2YOhFe1A4eBouy1gHwYpn8hmVvsJZF6h", "oauth_verifier"=>"6sBW6mPQIKzig0XwZmxMfWtSztjc5AIo"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to beacon://twitter/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:50:55 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered v1/users/_user.json.jbuilder (0.1ms)
+  Rendered v1/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:51:36 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=qrql9C6H0mlsQ0s0hTuS063gonWTigpF&oauth_verifier=G5LbgTzEqAHgxH5oBh4fe1UjPQs9eG5M" for 127.0.0.1 at 2014-10-29 02:51:39 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"qrql9C6H0mlsQ0s0hTuS063gonWTigpF", "oauth_verifier"=>"G5LbgTzEqAHgxH5oBh4fe1UjPQs9eG5M"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to beacon://twitter/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:51:40 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered v1/users/_user.json.jbuilder (0.5ms)
+  Rendered v1/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:52:06 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=RdbLFInWSNb2ikinHg2EFgm35btClbAq&oauth_verifier=QQhExT38hN9jTbLSxevgcp3dLC30p5V6" for 127.0.0.1 at 2014-10-29 02:52:08 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"RdbLFInWSNb2ikinHg2EFgm35btClbAq", "oauth_verifier"=>"QQhExT38hN9jTbLSxevgcp3dLC30p5V6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to beacon://twitter/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:52:09 -0700
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered v1/users/_user.json.jbuilder (0.2ms)
+  Rendered v1/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 131484ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/v1/users/1?=" for 127.0.0.1 at 2014-10-29 02:54:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered v1/users/_user.json.jbuilder (0.4ms)
+  Rendered v1/users/show.json.jbuilder (6.4ms)
+Completed 200 OK in 44ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/auth/twitter" for 127.0.0.1 at 2014-10-29 02:54:40 -0700
+
+
+Started GET "/user/auth/twitter/callback?oauth_token=BLlv8JmY8ji8ZDmXcZ0taP2MdE9GvPya&oauth_verifier=wsB2ULeNbtLto2SITcSHYQqk7mqgBpJb" for 127.0.0.1 at 2014-10-29 02:54:42 -0700
+Processing by Users::OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"BLlv8JmY8ji8ZDmXcZ0taP2MdE9GvPya", "oauth_verifier"=>"wsB2ULeNbtLto2SITcSHYQqk7mqgBpJb"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."provider" = 'twitter' AND "users"."uid" = '145018634'[0m
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `first_or_build' for #<User::ActiveRecord_Relation:0x007f8431d2dec8>):
+  app/models/user.rb:38:in `from_omniauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:26:in `complete_auth'
+  app/controllers/users/omniauth_callbacks_controller.rb:8:in `twitter'
+
+
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jakepeterson/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)

@@ -26,11 +26,11 @@ class User < ActiveRecord::Base
 
   def social_urls
     urls = {}
-    urls["facebook"] = self.facebook_url if self.facebook_url
-    urls["twitter"] = self.twitter_url if self.twitter_url
-    urls["instagram"] = self.instagram_url if self.instagram_url
-    urls["linkedin"] = self.linkedin_url if self.linkedin_url
-    urls["tumblr"] = self.tumblr_url if self.tumblr_url
+    urls["facebook"] = facebook_url if facebook_url
+    urls["twitter"] = twitter_url if twitter_url
+    urls["instagram"] = instagram_url if instagram_url
+    urls["linkedin"] = linkedin_url if linkedin_url
+    urls["tumblr"] = tumblr_url if tumblr_url
     return urls
   end
 
