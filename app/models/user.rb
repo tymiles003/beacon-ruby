@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -6,6 +8,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :instagram, :linkedin, :tumblr]
 
   has_many :invisible_areas
+
+  mount_uploader :profile_image, UserUploader
 
   def update_social_url!(type, url)
   	if type == 'facebook'
@@ -45,7 +49,10 @@ class User < ActiveRecord::Base
   end
 
   def profile_image_url=(url)
-    # TODO: integrate paperclip
+    file = File.open('image.png', 'wb') do |fo|
+      fo.write open(url).read
+    end
+    self.profile_image = file
   end
 
   def self.new_with_session(params, session)

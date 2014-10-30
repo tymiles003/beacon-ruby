@@ -34,6 +34,8 @@ gem 'omniauth-linkedin'
 gem 'omniauth-tumblr'
 gem 'omniauth-instagram'
 
+gem 'carrierwave'
+
 group :development, :test do 
 	gem 'pry-rails'
 	gem 'dotenv-rails'
