@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
 
     resource :email, only: [:new]
+
+    resource :social_profile, only: [:create, :update, :destroy]
   end
   
 end

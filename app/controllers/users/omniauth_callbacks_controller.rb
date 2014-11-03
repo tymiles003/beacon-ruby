@@ -23,6 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	protected 
 
 	def complete_auth(auth_type)
+		auth = request.env["omniauth.auth"]
 		@user = User.from_omniauth(request.env["omniauth.auth"], auth_type)
 		sign_in @user
 		redirect_to "beacon://#{auth_type}/" 
