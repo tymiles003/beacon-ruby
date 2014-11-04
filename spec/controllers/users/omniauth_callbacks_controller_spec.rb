@@ -12,6 +12,7 @@ describe Users::OmniauthCallbacksController do
   	it 'responds successfully' do
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
   		post :facebook, format: :json
+      expect(response).to have_http_status 302
   	end
   end
 
@@ -19,6 +20,7 @@ describe Users::OmniauthCallbacksController do
     it 'responds successfully' do 
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
       post :twitter, format: :json
+      expect(response).to have_http_status 302
     end
   end
 
@@ -26,6 +28,7 @@ describe Users::OmniauthCallbacksController do
     it 'responds successfully' do 
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:instagram]
       post :instagram, format: :json
+      expect(response).to have_http_status 302
     end
   end
 
@@ -33,6 +36,7 @@ describe Users::OmniauthCallbacksController do
     it 'responds successfully' do 
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:linkedin]
       post :linkedin, format: :json
+      expect(response).to have_http_status 302
     end
   end
 
@@ -40,6 +44,7 @@ describe Users::OmniauthCallbacksController do
     it 'responds successfully' do 
       request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:tumblr]
       post :tumblr, format: :json
+      expect(response).to have_http_status 302
     end
   end
 

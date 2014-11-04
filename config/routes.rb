@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resource :users, only: [:show]
 
     resource :email, only: [:new]
+
+    resources :invisible_areas, only: [:create, :update, :destroy]
   end
   
 end

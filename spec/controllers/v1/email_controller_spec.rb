@@ -8,6 +8,7 @@ describe V1::EmailsController do
 			get :new, email: user.email, format: :json
 			expect(response).to have_http_status 200
 		end
+		
 		it "fails successfully" do 
 			get :new, email: "random@email.com", format: :json
 			expect(response).to have_http_status 403

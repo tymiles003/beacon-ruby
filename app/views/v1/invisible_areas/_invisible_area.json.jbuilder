@@ -1,0 +1,1 @@
+json.(invisible_area, :id, :name, :location, :range, :latitude, :longitude)

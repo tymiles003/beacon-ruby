@@ -6,7 +6,9 @@ class V1::EmailsController < V1::BaseController
   skip_before_filter :authenticate_user!
 
 	def new
-		raise ActiveRecord::RecordNotFound if !params[:email]
+		unless params[:email] 
+			render status: 403 and return
+		end
 		if User.find_by_email(params[:email].downcase).nil?
 			render status: 403
 		end
