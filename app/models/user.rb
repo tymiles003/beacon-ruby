@@ -8,13 +8,25 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :instagram, :linkedin, :tumblr]
 
   has_many :invisible_areas
-  has_many :social_profiles
+  has_many :identities
 
   mount_uploader :profile_image, UserUploader
 
-  def self.from_omniauth(auth, type)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.password = Devise.friendly_token[0,20]
+  def add_omniauth(auth, type)
+    self["#{type}_url"] = self.class.url_from_omniauth(auth, type)
+  end
+
+  def self.url_from_omniauth(auth, type)  
+    if type == 'facebook'
+      return auth.info.urls["Facebook"]
+    elsif type == 'twitter'
+      return auth.info.urls["Twitter"]
+    elsif type == 'instagram'
+      return "https://instagram.com/#{auth.info.nickname}"
+    elsif type == 'linkedin'
+      return auth.info.urls["public_profile"]
+    elsif type == 'tumblr'
+      return auth.info.blogs.first["url"]
     end
   end
 
@@ -40,6 +52,20 @@ class User < ActiveRecord::Base
 
   def email_required?
     super && provider.blank?
+  end
+
+  def social_urls
+    urls = {}
+    for type in self.class.social_types
+      unless self["#{type}_url"].nil?
+        urls[type] = self["#{type}_url"] 
+      end
+    end
+    urls
+  end
+
+  def self.social_types
+    ["facebook", "twitter", "instagram", "linkedin", "tumblr"]
   end
 
 end

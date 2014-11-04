@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031031657) do
+ActiveRecord::Schema.define(version: 20141103234127) do
+
+  create_table "identities", force: true do |t|
+    t.string  "provider"
+    t.string  "uid"
+    t.integer "user_id"
+  end
 
   create_table "invisible_areas", force: true do |t|
     t.string  "name"

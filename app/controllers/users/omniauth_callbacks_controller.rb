@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+	
 	def facebook
 		complete_auth("facebook")
 	end
@@ -9,7 +9,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	end
 
 	def instagram
-		complete_auth("instgram")
+		complete_auth("instagram")
 	end
 
 	def linkedin
@@ -20,13 +20,25 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		complete_auth("tumblr")
 	end
 
+	def failure
+		redirect_to "beacon://user/auth/failure"
+	end
+
 	protected 
 
-	def complete_auth(auth_type)
+	def success(type)
+		redirect_to "beacon://user/auth/#{type}"
+	end
+
+	def complete_auth(type)
+		params = request.env["omniauth.params"]
+		id = params["id"]
+		current_user = User.find(id)
+
 		auth = request.env["omniauth.auth"]
-		@user = User.from_omniauth(request.env["omniauth.auth"], auth_type)
-		sign_in @user
-		redirect_to "beacon://#{auth_type}/" 
+		current_user.add_omniauth(auth, type)
+		current_user.save!
+		success type
 	end
 
 end

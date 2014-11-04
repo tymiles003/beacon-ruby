@@ -9,13 +9,9 @@ Rails.application.routes.draw do
 			delete 'sessions', to: 'sessions#destroy', as: 'logout'
 		end
 		
-    resources :users, only: [:show] do 
-    	put 'social', to: 'users#social'
-    end
+    resource :users, only: [:show]
 
     resource :email, only: [:new]
-
-    resource :social_profile, only: [:create, :update, :destroy]
   end
   
 end
